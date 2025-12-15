@@ -4,7 +4,7 @@
     <title>Simple Form</title>
 </head>
 <body>
-  <form action="{% url 'create_emp12' %}" method="post">
+  <form action="{% url 'creating_emp' %}" method="post">
     {% csrf_token %}
      <input type="text" name="name" placeholder="Name"><br><br>
   <input type="email" name="email" placeholder="Email"><br><br>

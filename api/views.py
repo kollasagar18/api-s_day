@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 import json
 file_name="api/static/emps.json"
 
@@ -22,6 +23,16 @@ def creating_emp(request):
     write_data(data_fram)
     # check data in terminal
     return HttpResponse("Form submitted successfully")
+@api_view(["GET"])
+def get_all(request):
+    data_fram=read_data()
+    return Response(data_fram)
+@api_view(["GET"])
+def get_alldata(request):
+  if request.method == "GET":
+      data_fram=read_data()
+      return JsonResponse(data_fram)
+    
 
 
 
