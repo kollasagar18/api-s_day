@@ -31,6 +31,7 @@ def get_all(request):
 def get_alldata(request):
   if request.method == "GET":
       data_fram=read_data()
+      #return (request,"data_all.html")
       return JsonResponse(data_fram)
     
 
